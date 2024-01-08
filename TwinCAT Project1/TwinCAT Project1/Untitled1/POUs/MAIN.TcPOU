@@ -8,10 +8,12 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[Counter:=Counter+1;
+PRG_Motion();
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="13" Count="0" />
+      <LineId Id="18" Count="0" />
       <LineId Id="7" Count="0" />
     </LineIds>
   </POU>
