@@ -9,11 +9,11 @@ END_VAR
     <Implementation>
       <ST><![CDATA[Counter:=Counter+1;
 PRG_Motion();
-]]></ST>
+
+PRG_TempControl();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="13" Count="0" />
-      <LineId Id="18" Count="0" />
+      <LineId Id="23" Count="2" />
       <LineId Id="7" Count="0" />
     </LineIds>
   </POU>
