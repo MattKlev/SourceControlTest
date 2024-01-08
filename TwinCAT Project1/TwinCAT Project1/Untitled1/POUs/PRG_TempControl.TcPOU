@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="PRG_TempControl" Id="{fb6a3f93-c616-41e5-96be-a48c24902e1e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_TempControl
+VAR
+	SetPoint			: LREAL := 100;
+	ActualTemp	AT %I*	: LREAL;
+	Output		AT %Q*	: LREAL;
+	fbPID				: FB_CTRL_PID;
+	PID_Params			: ST_CTRL_PID_PARAMS := (tCtrlCycleTime	:= TIME#10ms,
+												tTaskCycleTime	:= TIME#10ms,
+												fKp				:= 10,
+												tTn				:= TIME#100ms,
+												tTv				:= TIME#45ms,
+												tTd				:= TIME#1ms);
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbPID(fSetpointValue := SetPoint,
+	fActualValue	:= ActualTemp,
+	eMode			:= E_CTRL_MODE.eCTRL_MODE_ACTIVE,
+	fOut			=> Output,
+	stParams		:= PID_Params);]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_TempControl">
+      <LineId Id="3" Count="3" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
