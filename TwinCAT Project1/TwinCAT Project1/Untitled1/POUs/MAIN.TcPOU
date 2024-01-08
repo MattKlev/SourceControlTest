@@ -8,12 +8,11 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[Counter:=Counter-1;
-
+//Change made by programer 1
 //Programer 2 change]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="2" Count="0" />
-      <LineId Id="8" Count="0" />
+      <LineId Id="13" Count="1" />
       <LineId Id="7" Count="0" />
     </LineIds>
   </POU>
